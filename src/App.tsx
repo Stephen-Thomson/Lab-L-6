@@ -109,18 +109,18 @@ const App: React.FC = () => {
 
           {/* Search Bar */}
           <Grid item xs={12}>
-                    <Autocomplete
-                      freeSolo
-                      options={nameResults}
-                      renderInput={(params) => 
-                        <TextField
-                          {...params}
-                          label="Search"
-                          value={searchTerm}
-                          onChange={(e) => setSearchTerm(e.target.value)}
-                        />
-                      }
-                    />
+            <Autocomplete
+              freeSolo
+              options={nameResults.map(result => result.name || '')}
+              renderInput={(params) => 
+                <TextField
+                  {...params}
+                  label="Search"
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                />
+              }
+            />
           </Grid>
           
       </Grid>
